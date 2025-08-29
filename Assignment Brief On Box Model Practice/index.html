@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Practice Assignment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .task-section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Task 1: Basic Box Model Practice */
+        .container {
+            width: 500px;
+            height: 300px;
+            background-color: #d3d3d3;
+            padding: 20px;
+            margin: 20px auto;
+            position: relative;
+            border: 2px solid black; /* Added from Task 2 */
+        }
+
+        .content {
+            width: 400px;
+            height: 200px;
+            background-color: white;
+            margin: 0 auto;
+            /* Task 2: Added margins */
+            margin: 20px auto;
+            /* Task 3: Overflow handling */
+            overflow: scroll;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Task 2: Border variations*/
+        .container-dotted {
+            border: 3px dotted blue;
+        }
+
+        .container-dashed {
+            border: 4px dashed red;
+        }
+
+        /* Task 3: Container with increased padding */
+        .container-padded {
+            padding: 40px;
+        }
+
+        /* Task 4: Positioning Practice */
+        .absolute {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            background-color: #ff6b6b;
+            border: 2px solid #ff4757;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .relative {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 60px;
+            background-color: #4834d4;
+            border: 2px solid #3742fa;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        /* Task 5: Float Elements */
+        .float-container {
+            width: 500px;
+            height: 200px;
+            background-color: #e8e8e8;
+            padding: 20px;
+            margin: 20px auto;
+            border: 2px solid #666;
+            overflow: hidden; 
+        }
+
+        .float-left {
+            float: left;
+            width: 180px;
+            height: 120px;
+            background-color: #2ecc71;
+            border: 2px solid #27ae60;
+            margin: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .float-right {
+            float: right;
+            width: 180px;
+            height: 120px;
+            background-color: #e74c3c;
+            border: 2px solid #c0392b;
+            margin: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Interactive Controls */
+        .controls {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+        }
+
+        .control-group {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            min-width: 100px;
+        }
+
+        input[type="range"] {
+            width: 200px;
+        }
+
+        .demo-text {
+            font-size: 14px;
+            line-height: 1.4;
+            color: #555;
+        }
+
+        .highlight-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Box Model Practice Assignment</h1>
+
+    <div class="task-section">
+        <h2>Task 1: Basic Box Model Practice</h2>
+        <div class="highlight-box">
+            <strong>Container:</strong> 500px × 300px with 20px padding and light gray background<br>
+            <strong>Content:</strong> 400px × 200px with white background, centered with margin: 0 auto
+        </div>
+        
+        <div class="container" id="container1">
+            <div class="content" id="content1">
+                <div class="demo-text">
+                    This is the content div. It's centered within the container using margin: 0 auto. 
+                    The container has padding that creates space around this content area.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="task-section">
+        <h2>Task 2: Margin and Border Practice</h2>
+        <div class="highlight-box">
+            Added 20px margins to content div and 2px solid black border to container. 
+            Below are examples with different border styles:
+        </div>
+
+        <div class="container container-dotted">
+            <div class="content">
+                <div class="demo-text">Container with dotted blue border (3px dotted blue)</div>
+            </div>
+        </div>
+
+        <div class="container container-dashed">
+            <div class="content">
+                <div class="demo-text">Container with dashed red border (4px dashed red)</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="task-section">
+        <h2>Task 3: Padding and Overflow Practice</h2>
+        <div class="highlight-box">
+            Container padding increased to 40px. Content div has overflow: scroll to handle text overflow.
+        </div>
+
+        <div class="container container-padded">
+            <div class="content">
+                <div class="demo-text">
+                    This content div demonstrates the overflow: scroll property:  
+                    When the content exceeds the height of the div, scrollbars will appear. 
+                    Ekiti State is a state in southwestern Nigeria. It was created on October 1, 1996,
+                    from part of Ondo State. The state capital is Ado-Ekiti. Ekiti State is known for its rich cultural heritage,
+                    beautiful landscapes, and educational institutions. The state is predominantly inhabited by the Yoruba people,
+                    who have a rich history and tradition. Ekiti State is also known for its agricultural activities,
+                    producing crops such as cocoa, yam, cassava, and maize. The state has several tourist attractions,
+                    including the Ikogosi Warm Springs, Erin-Ijesha Waterfalls, and the Funfunmi Waterfalls.
+                    The people of Ekiti State are known for their hospitality and vibrant festivals, such as the
+                    Ewi Festival and the New Yam Festival. The state is also home to several higher education institutions,
+                    including Ekiti State University and Afe Babalola University. Overall, Ekiti State is a vibrant and culturally rich state in Nigeria.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="task-section">
+        <h2>Task 4: Positioning Practice</h2>
+        <div class="highlight-box">
+            Red circle: absolute positioning (top: 20px, left: 20px)<br>
+            Blue rectangle: relative positioning (top: 50%, left: 50% with transform for centering)
+        </div>
+
+        <div class="container">
+            <div class="absolute">ABS</div>
+            <div class="relative">REL</div>
+            <div class="content">
+                <div class="demo-text">
+                    This container demonstrates positioning. The red circle is absolutely positioned 
+                    at top: 20px, left: 20px relative to the container. The blue rectangle uses 
+                    relative positioning with top: 50% and left: 50%.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="task-section">
+        <h2>Task 5: Floating Elements</h2>
+        <div class="highlight-box">
+            Two divs floating left and right respectively. The container uses overflow: hidden to clear floats.
+        </div>
+
+        <div class="float-container">
+            <div class="float-left">Float Left</div>
+            <div class="float-right">Float Right</div>
+            <div style="clear: both; padding-top: 10px;">
+                <div class="demo-text">
+                    This text appears below the floated elements. The green div floats left, 
+                    the red div floats right, and they interact within the container.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="task-section">
+        <h2>Interactive Controls</h2>
+        <div class="controls">
+            <div class="control-group">
+                <label>Container Width:</label>
+                <input type="range" id="widthSlider" min="300" max="800" value="500">
+                <span id="widthValue">500px</span>
+            </div>
+            <div class="control-group">
+                <label>Container Padding:</label>
+                <input type="range" id="paddingSlider" min="10" max="60" value="20">
+                <span id="paddingValue">20px</span>
+            </div>
+            <div class="control-group">
+                <label>Content Margin:</label>
+                <input type="range" id="marginSlider" min="0" max="40" value="20">
+                <span id="marginValue">20px</span>
+            </div>
+        </div>
+        
+        <div class="container" id="interactiveContainer">
+            <div class="content" id="interactiveContent">
+                <div class="demo-text">
+                    Use the controls above to experiment with different box model values. 
+                    This interactive example helps you understand how width, padding, and margin affect the layout.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Interactive controls
+        const widthSlider = document.getElementById('widthSlider');
+        const paddingSlider = document.getElementById('paddingSlider');
+        const marginSlider = document.getElementById('marginSlider');
+        const widthValue = document.getElementById('widthValue');
+        const paddingValue = document.getElementById('paddingValue');
+        const marginValue = document.getElementById('marginValue');
+        const interactiveContainer = document.getElementById('interactiveContainer');
+        const interactiveContent = document.getElementById('interactiveContent');
+
+        widthSlider.addEventListener('input', function() {
+            const value = this.value + 'px';
+            widthValue.textContent = value;
+            interactiveContainer.style.width = value;
+        });
+
+        paddingSlider.addEventListener('input', function() {
+            const value = this.value + 'px';
+            paddingValue.textContent = value;
+            interactiveContainer.style.padding = value;
+        });
+
+        marginSlider.addEventListener('input', function() {
+            const value = this.value + 'px';
+            marginValue.textContent = value;
+            interactiveContent.style.margin = value + ' auto';
+        });
+    </script>
+</body>
+</html>
